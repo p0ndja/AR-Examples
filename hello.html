@@ -124,23 +124,69 @@ function initialize()
 	
 	markerRoot1.add( mesh1 );
 
+	// Cylinder
 	markerRoot2 = new THREE.Group();
 	scene.add(markerRoot2);
 	let markerControls2 = new THREEx.ArMarkerControls(arToolkitContext, markerRoot2, {
 		type: 'pattern', patternUrl: "data/pattern-CYN.patt",
 	})
-
-	let geometry2	= new THREE.CylinderGeometry( 1, 1, 1, 32 );
-	let material2	= new THREE.MeshNormalMaterial({
+	let geometry2 = new THREE.CylinderGeometry(0.5, 0.5, 1, 32);
+	let material2 = new THREE.MeshNormalMaterial({
 		transparent: true,
 		opacity: 1,
 		side: THREE.DoubleSide
-	}); 
-	
-	mesh2 = new THREE.Mesh( geometry2, material2 );
+	});
+	let mesh2 = new THREE.Mesh(geometry2, material2);
 	mesh2.position.y = 0.5;
-	
-	markerRoot2.add( mesh2 );
+	markerRoot2.add(mesh2);
+
+	// Pyramid
+	markerRoot3 = new THREE.Group();
+	scene.add(markerRoot3);
+	let markerControls3 = new THREEx.ArMarkerControls(arToolkitContext, markerRoot3, {
+		type: 'pattern', patternUrl: "data/pattern-PYR.patt",
+	})
+	let geometry3 = new THREE.ConeGeometry(0.5, 1, 4);
+	let material3 = new THREE.MeshNormalMaterial({
+		transparent: true,
+		opacity: 1,
+		side: THREE.DoubleSide
+	});
+	let mesh3 = new THREE.Mesh(geometry3, material3);
+	mesh3.position.y = 0.5;
+	markerRoot3.add(mesh3);
+
+	// Sphere
+	markerRoot4 = new THREE.Group();
+	scene.add(markerRoot4);
+	let markerControls4 = new THREEx.ArMarkerControls(arToolkitContext, markerRoot4, {
+		type: 'pattern', patternUrl: "data/pattern-SPH.patt",
+	})
+	let geometry4 = new THREE.SphereGeometry(0.5, 32, 32);
+	let material4 = new THREE.MeshNormalMaterial({
+		transparent: true,
+		opacity: 1,
+		side: THREE.DoubleSide
+	});
+	let mesh4 = new THREE.Mesh(geometry4, material4);
+	mesh4.position.y = 0.5;
+	markerRoot4.add(mesh4);
+
+	// Cone
+	markerRoot5 = new THREE.Group();
+	scene.add(markerRoot5);
+	let markerControls5 = new THREEx.ArMarkerControls(arToolkitContext, markerRoot5, {
+		type: 'pattern', patternUrl: "data/pattern-CONE.patt",
+	})
+	let geometry5 = new THREE.ConeGeometry(0.5, 1, 32);
+	let material5 = new THREE.MeshNormalMaterial({
+		transparent: true,
+		opacity: 1,
+		side: THREE.DoubleSide
+	});
+	let mesh5 = new THREE.Mesh(geometry5, material5);
+	mesh5.position.y = 0.5;
+	markerRoot5.add(mesh5);
 }
 
 
